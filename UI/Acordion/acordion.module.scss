@@ -1,0 +1,22 @@
+@import "/styles/styles.scss";
+
+.acordion {
+    max-width: 487px;
+    width: 100%;
+}
+
+.root > div {
+    border: 1px solid $color-dark-blue;
+    border-bottom: none;
+    padding-right: 0;
+}
+
+.root > div:first-child > div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    min-height: inherit;
+    background-color: $color-red;
+    color: $color-white;
+}
