@@ -8,11 +8,11 @@ import Container from "UI/Container/Container";
 import Affiche from "Components/Affiche/Affiche";
 import News from "Components/News/News";
 import Contacts from "Components/Contacts/Contacts";
-import { IndexConst } from "shared/constants/IndexConst";
+import { IndexData } from "shared/constants/pages/IndexData";
 
 import s from "../styles/pages/Home.module.scss";
 
-export default function Home() {
+export default function HomePage() {
   const {
     head: { title },
     carusel,
@@ -20,7 +20,7 @@ export default function Home() {
     affiche,
     news,
     contacts,
-  } = IndexConst;
+  } = IndexData;
 
   return (
     <>
@@ -32,19 +32,17 @@ export default function Home() {
       <Header />
 
       <main className={s.main}>
-        <Container noPaddingMobile>
-          <Carusel data={carusel} />
-          <Collectives data={collectives} />
-        </Container>
+        <Carusel data={carusel} />
 
-        <Container>
-          <Affiche data={affiche} />
-        </Container>
+        <Collectives data={collectives} />
+
+        <Affiche data={affiche} />
 
         <News data={news} />
 
         <Contacts data={contacts} />
       </main>
+
       <Footer />
     </>
   );

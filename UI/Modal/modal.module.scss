@@ -11,24 +11,21 @@ $containerWidth: 625px;
 .modal {
   max-width: 700px;
   width: 100%;
-  min-height: 410px;
+  max-height: 100%;
+  overflow-y: auto;
   margin-left: 15px;
   margin-right: 15px;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
   background-color: $color-white;
 
-  @include mobile {
+  @include mobile-tablet {
     margin: 0;
-    max-width: inherit;
-    width: 100%;
-    height: 100%;
   }
 }
 
 .modalWrapper {
-  @include mobile {
+  @include mobile-tablet {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -64,8 +61,8 @@ $containerWidth: 625px;
 }
 
 .title {
-  @include mobile {
-    padding: 0;
+  @include mobile-tablet {
+    padding: 0 !important;
     font-size: 22px;
   }
 }
@@ -119,6 +116,7 @@ $containerWidth: 625px;
   font-size: $fs-normal;
 
   @include mobile-tablet {
+    align-items: flex-start;
     border: none;
   }
 }
@@ -159,7 +157,8 @@ $containerWidth: 625px;
 .mobileBtn {
   display: none;
 
-  @include mobile {
+  @include mobile-tablet {
+    margin-bottom: 40px;
     display: block;
   }
 }

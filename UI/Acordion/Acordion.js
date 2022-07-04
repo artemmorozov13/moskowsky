@@ -1,36 +1,33 @@
-import cn from "classnames";
-
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import {
+  Accordion,
+  AccordionSummary,
+  Typography,
+  AccordionDetails,
+} from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import s from "./acordion.module.scss";
 
 const Acordion = (props) => {
-    const {
-        className,
-        title,
-        children
-    } = props
+  const { title, content } = props;
 
-    return(
-        <Accordion
-            className={cn(s.acordion, className)}
-            classes={{
-                root: s.root
-            }}
-        >
-            <AccordionSummary
-                expandIcon={<KeyboardArrowDownIcon className={s.icon} />}
-                aria-controls="panel1a-content"
-            >
-            <h3>{title}</h3>
-            </AccordionSummary>
-            <AccordionDetails className={s.content}>
-                <p>{children}</p>
-            </AccordionDetails>
-        </Accordion>
-        
-    )
-}
+  return (
+    <Accordion className={s.acordion} square>
+      <AccordionSummary
+        expandIcon={<KeyboardArrowDownIcon />}
+        className={s.header}
+        classes={{
+          expandIconWrapper: s.button,
+        }}
+      >
+        <p className={s.title}>{title}</p>
+      </AccordionSummary>
+      <AccordionDetails className={s.body}>
+        <p className={s.answer}>Ответ</p>
+        <p className={s.content}>{content}</p>
+      </AccordionDetails>
+    </Accordion>
+  );
+};
 
-export default Acordion
+export default Acordion;

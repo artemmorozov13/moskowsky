@@ -1,24 +1,56 @@
-import Acordion from "UI/Acordion/Acordion";
 import CustomInput from "UI/CustomInput/CustomInput";
+import CustomTabs from "UI/CustomTabs/CustomTabs";
+
+import s from "styles/pages/Components.module.scss";
+import Acordion from "UI/Acordion/Acordion";
+import CollectiveCard from "Components/CollectiveCard/CollectiveCard";
 
 const Components = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
-      <CustomInput label="Как к вам обращаться?" />
+    <div className={s.main}>
+      <div>
+        <h2>Input</h2>
+        <CustomInput label="Как к вам обращаться?" />
+      </div>
 
-      <Acordion
-        title="Заголовок акордиона"
-      >Текст акордиона</Acordion>
+      <div>
+        <h2>Textarea</h2>
+        <CustomInput
+          label="Как к вам обращаться?"
+          multiline
+          cols={30}
+          rows={10}
+        />
+      </div>
+
+      <div>
+        <h2>Cusom Tabs</h2>
+        <CustomTabs
+          titles={["История", "КДЦ на Варшавской", "Проекты", "Галерея"]}
+          components={[
+            "CusomBlock 1",
+            "CusomBlock 2",
+            "CusomBlock 3",
+            "CusomBlock 4",
+          ]}
+        />
+      </div>
+
+      <div>
+        <h2>Custom Acordion</h2>
+        <Acordion
+          title="Где купить билеты на мероприятия?"
+          content="Билеты вы можете приобрести в кассе Культурно-Досугового Центра или на нашем сайте.
+          Телефон кассы: +7 (932) 343-32-32.
+          График работы кассы: ВТ-ПТ: 12.00 - 19.00 СБ: 12.00 - 16.00"
+        />
+      </div>
+
+      <div>
+        <h2>Cards Elements</h2>
+        <CollectiveCard />
+      </div>
     </div>
-    
   );
 };
 
