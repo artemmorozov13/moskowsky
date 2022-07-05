@@ -128,6 +128,11 @@ export default function Home() {
               <CollectiveCard key={`list_collective${collective.id}`} className={s.card} />
             ))}
           </div>
+          <div>
+            <div className={s.buttonWrapper}>
+              <Button className={s.loadmore}>Показать еще</Button>
+            </div>
+          </div>
         </Container>
       </div>
 
